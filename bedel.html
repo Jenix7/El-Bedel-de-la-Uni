@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL BEDEL DE LA UNI | Una historia de amor, pasión y crimen</title>
+    <style>
+        :root {
+            --primary-color: #0f1626;
+            --secondary-color: #ab1b33;
+            --accent-color: #1e2438;
+            --text-color: #f5f5f5;
+            --dark-color: #0a0e14;
+            --light-color: #2a324a;
+            --highlight-color: #c99d66;
+            --font-main: 'Playfair Display', serif;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-text: 'Libre Franklin', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-text);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--dark-color);
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-main);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            font-style: italic;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        h2:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 80px;
+            height: 2px;
+            background-color: var(--highlight-color);
+        }
+
+        h3 {
+            font-size: 2.2rem;
+            color: var(--highlight-color);
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 7rem 0;
+            position: relative;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+            font-family: var(--font-text);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--highlight-color);
+            transition: all 0.3s ease-in-out;
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            left: 0;
+        }
+
+        .btn:hover {
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(26, 26, 46, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .hero-social {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero-social {
+        justify-content: center;
+    }
+}
+
+        .logo {
+            font-family: var(--font-main);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-color);
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        .logo span {
+            color: var(--highlight-color);
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 2.5rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav a:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.9)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            filter: blur(5px) grayscale(60%);
+            z-index: -1;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 46, 99, 0.6) 0%, rgba(26, 26, 46, 0.9) 100%);
+            z-index: -1;
+        }
+
+        .hero-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-book-cover {
+    position: relative;
+    perspective: 1000px;
+    width: 350px;
+    margin-left: 2rem;
+}
+
+@media (max-width: 992px) {
+    .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+
+    .hero-book-cover {
+        margin-left: 0;
+    }
+}
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--highlight-color);
+            color: var(--dark-color);
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
+            font-family: var(--font-text);
+            border-radius: 2px;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .store-title {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-color);
+}
+
+        .floating-element {
+            position: absolute;
+            animation: float 15s infinite linear alternate;
+            opacity: 0.1;
+        }
+
+        .element-1 {
+            top: 20%;
+            left: 10%;
+            font-size: 15rem;
+            animation-duration: 17s;
+        }
+
+        .element-2 {
+            top: 60%;
+            right: 5%;
+            font-size: 12rem;
+            animation-duration: 22s;
+            animation-delay: 2s;
+        }
+
+        .element-3 {
+            bottom: 10%;
+            left: 30%;
+            font-size: 10rem;
+            animation-duration: 19s;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(20px) rotate(-5deg);
+            }
+        }
+
+        /* Book Preview Section */
+        .book-preview {
+            background-color: var(--light-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glitch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            opacity: 0.05;
+            mix-blend-mode: overlay;
+            filter: grayscale(100%);
+        }
+
+        .book-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .book-image {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        /* Keep the original styles for the hero section */
+.book-image-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-30deg) rotateX(5deg);
+    transition: transform 1s ease;
+    animation: bookHover 5s infinite alternate ease-in-out;
+}
+
+@keyframes bookHover {
+    0% {
+        transform: rotateY(-30deg) rotateX(5deg) translateZ(0);
+    }
+
+    100% {
+        transform: rotateY(-25deg) rotateX(3deg) translateZ(20px);
+    }
+}
+
+/* Add new styles specifically for the book preview section */
+.book-preview .book-image-inner {
+    transform: rotateY(0deg) rotateX(0deg);
+    animation: bookHoverFront 5s infinite alternate ease-in-out;
+}
+
+@keyframes bookHoverFront {
+    0% {
+        transform: translateY(0) translateZ(0);
+    }
+
+    100% {
+        transform: translateY(-10px) translateZ(20px);
+    }
+}
+
+        .book-cover {
+            width: 100%;
+            box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(255, 46, 99, 0.3);
+            border-radius: 5px;
+        }
+
+        .newsletter-social {
+    margin: 2rem auto;
+    justify-content: center;
+}
+
+        .book-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(255, 46, 99, 0.2) 0%, rgba(8, 217, 214, 0.2) 100%);
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+
+        .book-shadow {
+            position: absolute;
+            width: 90%;
+            height: 20px;
+            bottom: -30px;
+            left: 5%;
+            background: rgba(0, 0, 0, 0.3);
+            filter: blur(15px);
+            border-radius: 50%;
+        }
+
+        .book-info {
+            position: relative;
+        }
+
+        .book-info h2 {
+            margin-bottom: 2.5rem;
+        }
+
+        .book-tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 0.4rem 1rem;
+            margin-right: 0.6rem;
+            margin-bottom: 0.6rem;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-left: 2px solid var(--highlight-color);
+        }
+
+        .book-tags {
+            margin-bottom: 2rem;
+        }
+
+        .book-details {
+            background-color: var(--accent-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-detail {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        .book-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .detail-label {
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .stars {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .rating-count {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .book-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Author Section */
+        .author {
+            background-color: var(--dark-color);
+            position: relative;
+        }
+
+        .author:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            opacity: 0.05;
+            mix-blend-mode: overlay;
+        }
+
+        .author-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .author-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .author-image:before {
+    display: none; /* This will hide the overlay completely */
+}
+        .author-image img {
+            width: 100%;
+            display: block;
+            transition: all 0.5s ease;
+        }
+
+        .author-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .author-name {
+            margin-bottom: 1rem;
+        }
+
+        .author-badge {
+            display: inline-block;
+            background-color: var(--highlight-color);
+            color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transform: skew(-10deg);
+        }
+
+        .author-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-title);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .author-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .social-icon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .social-icon:hover:before {
+            transform: translateY(0);
+        }
+
+        .social-icon:hover {
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Characters Section */
+        .characters {
+            background-color: var(--accent-color);
+            position: relative;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .character-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .character-image {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0; /* Round only top corners */
+}
+
+        .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .character-card {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    background-color: var(--light-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+        .character-image:before {
+    display: none; /* Remove the gradient overlay */
+}
+
+        .character-content {
+    padding: 1.5rem;
+    position: relative; /* Change from absolute to relative */
+    width: 100%;
+    background-color: var(--light-color); /* Add background color */
+}
+
+        .character-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-role {
+            display: inline-block;
+            color: var(--highlight-color);
+            padding: 0.2rem 0;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: var(--font-text);
+            border-bottom: 1px solid var(--highlight-color);
+        }
+
+        /* Plot Twists Section */
+        .plot-twists {
+            background-color: var(--dark-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plot-twists:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            opacity: 0.05;
+            filter: blur(5px);
+        }
+
+        .plot-twist-slider {
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .twist-card {
+            background-color: var(--accent-color);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--secondary-color);
+            position: relative;
+        }
+
+        .twist-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .twist-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .twist-chapter {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(26, 26, 46, 1), rgba(26, 26, 46, 0.5));
+    padding: 2rem 1.5rem 0.5rem; /* Increased bottom padding from 1.5rem to 3.5rem */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Trailer Section */
+        .trailer {
+            background-color: var(--dark-color);
+            position: relative;
+            text-align: center;
+        }
+
+        .trailer:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            opacity: 0.2;
+            filter: blur(10px);
+        }
+
+        .trailer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .trailer-badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            transform: skew(-10deg);
+        }
+
+        .trailer-video {
+            margin: 3rem auto;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: var(--highlight-color);
+        }
+
+        .play-button i {
+            font-size: 2rem;
+            color: white;
+            margin-left: 5px;
+        }
+
+        /* Purchase Section */
+        .purchase {
+            background-color: var(--accent-color);
+            position: relative;
+            text-align: center;
+        }
+
+        .purchase:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(255, 46, 99, 0.2) 0%, rgba(8, 217, 214, 0.2) 100%);
+        }
+
+        .purchase-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .purchase h2 {
+            color: var(--text-color);
+        }
+
+        .purchase h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--highlight-color);
+        }
+
+        .purchase p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--highlight-color);
+            margin: 2rem 0;
+            font-family: var(--font-title);
+        }
+
+        .price-original {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-right: 1rem;
+        }
+
+        .store-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .store-btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .store-icon {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+        }
+
+        .limited-offer {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            opacity: 0.05;
+            filter: blur(5px);
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .newsletter h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1.2rem;
+            border: none;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            border-radius: 8px 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--highlight-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-title {
+            margin-bottom: 2rem;
+        }
+
+        .contact-methods {
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: var(--highlight-color);
+        }
+
+        .contact-form {
+            background-color: var(--accent-color);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            color: var(--text-color);
+            font-family: var(--font-text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            padding: 5rem 0 2rem;
+            position: relative;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            opacity: 0.05;
+            mix-blend-mode: overlay;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 1.5rem;
+            display: block;
+        }
+
+        .footer-links a:before {
+            content: '\f105';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary-color);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--highlight-color);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            .hero-content {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .book-content,
+            .author-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .author-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .contact-info {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 5rem 0;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero-content {
+                padding: 2rem 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--accent-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 1.5rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+
+            .store-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: 8px;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-btn {
+                border-radius: 8px;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .book-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-grid {
+                gap: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Libre+Franklin:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+<script>
+    // Configuración central de redes sociales
+    const socialLinks = {
+        instagram: "https://www.instagram.com/coronasborri/",
+        youtube: "https://www.youtube.com/@inmacoronas1326",
+        twitter: "https://x.com/CoronasInma",
+        facebook: "https://www.facebook.com/inma.coronasborri.5",
+        linkedin: "https://www.linkedin.com/in/inma-coronas-40306348/",
+        pinterest: "https://es.pinterest.com/inma6841"
+    };
+
+    // Aplicar a todos los iconos sociales
+    document.addEventListener('DOMContentLoaded', function() {
+        // Seleccionar todos los iconos sociales
+        const instagramIcons = document.querySelectorAll('.social-icon .fa-instagram');
+        const youtubeIcons = document.querySelectorAll('.social-icon .fa-youtube');
+        const twitterIcons = document.querySelectorAll('.social-icon .fa-x-twitter, .social-icon .fa-twitter');
+        const facebookIcons = document.querySelectorAll('.social-icon .fa-facebook-f');
+        const linkedinIcons = document.querySelectorAll('.social-icon .fa-linkedin-in');
+
+        // Asignar enlaces a cada tipo de icono
+        instagramIcons.forEach(icon => {
+            icon.closest('a').href = socialLinks.instagram;
+            icon.closest('a').setAttribute('target', '_blank');
+        });
+
+        youtubeIcons.forEach(icon => {
+            icon.closest('a').href = socialLinks.youtube;
+            icon.closest('a').setAttribute('target', '_blank');
+        });
+
+        twitterIcons.forEach(icon => {
+            icon.closest('a').href = socialLinks.twitter;
+            icon.closest('a').setAttribute('target', '_blank');
+        });
+
+        facebookIcons.forEach(icon => {
+            icon.closest('a').href = socialLinks.facebook;
+            icon.closest('a').setAttribute('target', '_blank');
+        });
+
+        linkedinIcons.forEach(icon => {
+            icon.closest('a').href = socialLinks.linkedin;
+            icon.closest('a').setAttribute('target', '_blank');
+        });
+    });
+</script>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">El Bedel<span> de la Uni</span></a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#book">El Libro</a></li>
+                        <li><a href="#author">Autora</a></li>
+                        <li><a href="#characters">Personajes</a></li>
+                        <li><a href="#gallery">Ubicaciones</a></li>
+                        <li><a href="#purchase">Comprar</a></li>
+                    </ul>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-elements">
+
+        </div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-content">
+                    <span class="hero-badge">Inma Coronas</span>
+                    <h1>El Bedel de la Uni</h1>
+                    <p>Una joven universitaria enamorada de un profesor se ve envuelta en un escalofriante suceso que hace que su vida de un
+                    giro totalmente inesperado.</p>
+                    <div class="cta-buttons">
+                        <a href="#book" class="btn">Descubrir la historia</a>
+                        <a href="#purchase" class="btn btn-outline">Conseguir ahora</a>
+                    </div>
+                    <div class="author-social hero-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="hero-book-cover">
+                    <div class="book-image-inner">
+                        <img src="https://imgur.com/F6bfgZ0.jpg"
+                            alt="Portada del libro El Bedel de la Uni" class="book-cover">
+                        <div class="book-effect"></div>
+                    </div>
+                    <div class="book-shadow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Preview Section -->
+    <section id="book" class="book-preview">
+        <div class="glitch-overlay"></div>
+        <div class="container">
+            <div class="book-content">
+                <div class="book-image">
+                    <div class="book-image-inner">
+                        <img src="https://imgur.com/F6bfgZ0.jpg"
+                            alt="Portada del libro El Bedel de la Uni" class="book-cover">
+                        <div class="book-effect"></div>
+                    </div>
+                    <div class="book-shadow"></div>
+                </div>
+                <div class="book-info">
+                    <h2>La Historia</h2>
+                    <div class="book-tags">
+                        <span class="book-tag">Romance</span>
+                        <span class="book-tag">Thriller</span>
+                        <span class="book-tag">Misterio</span>
+                    </div>
+
+                    <p>Carla es una joven universitaria de finales de los años ochenta, que cursa la carrera de derecho y tras tres años en la
+                    Universidad privada, ahora accede a la Universidad central. Ahí conoce a Dani, el Bedel de la UNI, con el que coincide
+                    muy a menudo en el servicio de fotocopias y al que acompaña varias veces en su recorrido para proceder al cierre de las
+                    aulas, abriéndose entre ellos una muy bonita amistad.</p>
+                    <p>Katy, una compañera de la facultad ,hará que la vida de Carla cambie radicalmente al involucrarse en una compleja labor
+                    detectivesca. Para resolver este espeluznante suceso, se paseará junto a Dani por el jardín de las Hespérides, siempre
+                    bajo la atenta mirada de Ladón, el dragón que vigila las ninfas del anochecer.</p>
+                    <div class="book-details">
+                        <div class="book-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <span class="detail-label">Páginas:</span>
+                                <span>X</span>
+                            </div>
+                        </div>
+                        <div class="book-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <span class="detail-label">Editorial:</span>
+                                <span>Universo de Letras</span>
+                            </div>
+                        </div>
+                        <div class="book-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <span class="detail-label">Publicación:</span>
+                                <span>X</span>
+                            </div>
+                        </div>
+                    <div class="book-detail">
+                        <div class="detail-icon">
+                            <i class="fas fa-barcode"></i>
+                        </div>
+                        <div>
+                            <span class="detail-label">ISBN:</span>
+                            <span>978-84-1046-142-0</span>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="book-cta">
+                        <a href="#purchase" class="btn">Comprar ahora</a>
+                        <a href="#trailer" class="btn btn-outline">Ver tráiler</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="author" class="author">
+        <div class="container">
+            <h2>La Autora</h2>
+            <div class="author-content">
+                <div class="author-image">
+                    <img src="https://i.imgur.com/JdNmG47.jpg" alt="Foto de la autora Inma Coronas">
+                </div>
+                <div class="author-bio">
+
+                    <h3 class="author-name">Inma Coronas</h3>
+                    <p>Inma Coronas Borri nació el veinte de junio de 1969 en Barcelona, donde reside y trabaja actualmente. Está casada y es
+                    madre de tres hijos. Licenciada en derecho por la Universidad de Barcelona en el año 1992, ha dedicado su vida laboral
+                    principalmente a la docencia, trabajando también en el sector empresarial. En varias ocasiones ha colaborado como
+                    articulista para diferentes entidades.</p>
+                    <div class="author-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="characters">
+        <div class="container">
+            <h2>Personajes Principales</h2>
+            <div class="characters-grid">
+                <div class="character-card">
+                    <div class="character-image">
+                        <img src="https://imgur.com/vG5VOUF.jpg" alt="Carla">
+                    </div>
+                    <div class="character-content">
+                        <span class="character-role">Protagonista</span>
+                        <h3 class="character-name">Carla</h3>
+                        <p>La protagonista de ta novela, una estudiante de ta carrera de derecho que va a
+                        empezar el cuarto curso en la universidad. Se ve implicada en un entramado
+                        delictivo, a raíz de la desaparición de una compañera. </p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-image">
+                        <img src="https://imgur.com/ZVkYpBC.jpg" alt="Dani">
+                    </div>
+                    <div class="character-content">
+                        <span class="character-role">Bedel</span>
+                        <h3 class="character-name">Dani</h3>
+                        <p>El Bedel de la universidad, acompaña a Carla en el seguimiento de todas las pistas
+                        que tienen para resolver la desaparición de la alumna.</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-image">
+                        <img src="https://imgur.com/SGegicF.jpg" alt="Katy">
+                    </div>
+                    <div class="character-content">
+                        <span class="character-role">Víctima</span>
+                        <h3 class="character-name">Katy</h3>
+                        <p>La alumna que ha desaparecido, pertenece al popular grupo de los "O sea" de la alta
+                        sociedad barcelonesa y no se lleva muy bien con Carla.</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-image">
+                        <img src="https://imgur.com/NJ7ZcRg.jpg" alt="Álex">
+                    </div>
+                    <div class="character-content">
+                        <span class="character-role">Profesor</span>
+                        <h3 class="character-name">Álex</h3>
+                        <p>El profesor de derecho procesal de la universidad del que Carla está enamorada,
+                        vive diferentes episodios junto a ella y se le investiga como sospechoso del caso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plot Twists Section -->
+    <section class="plot-twists">
+        <div class="container">
+            <h2>GIROS INESPERADOS</h2>
+            <p>Los lectores no pueden dejar de hablar de los impactantes momentos que llenan esta novela...</p>
+            <div class="plot-twist-slider">
+                <div class="twist-card">
+                    <p class="twist-text">"Cuando descubrí quién estaba realmente detrás de todo, tuve que dejar el
+                        libro y dar una vuelta. Mi mente explotó completamente."</p>
+                    <p class="twist-chapter">- Sobre el Capítulo 27</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>UBICACIONES</h2>
+            <p>Explora los escenarios reales de Barcelona donde se desarrolla esta historia</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://imgur.com/n6S6JYa.jpg" alt="Facultad de Derecho UB">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">UNIVERSIDAD BARCELONA DERECHO</h3>
+                        <p class="gallery-desc">Lugar donde sucede la trama principal de la novela.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/q9CEnD5.jpg" alt="Bar París">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">BAR PARÍS</h3>
+                        <p class="gallery-desc">Sitio habitual de encuentro de la juventud barcelonesa antes de ir a las
+                            discotecas.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/AK5ZNqS.jpg" alt="Velódromo">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">BAR VELÓDROMO</h3>
+                        <p class="gallery-desc">Sitio de tapeo donde hacen amistades la protagonista y sus amigas.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/zwOZ5gb.jpg" alt="Up and Down">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">UP AND DOWN</h3>
+                        <p class="gallery-desc">Considerada la discoteca más glamurosa de la ciudad, frecuentada por la
+                            "creme de la creme barcelonesa" y famosos de todas las nacionalidades.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/jWXLJ2A.jpg" alt="Biblioteca Nacional Cataluña">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">BIBLIOTECA NACIONAL DE CATALUÑA</h3>
+                        <p class="gallery-desc">Centro de consulta donde acuden para documentarse en el intento de resolver
+                            el secuestro.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/K9Pchmn.jpg" alt="Antigua Finca Güell">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">ANTIGUA FINCA GÜELL</h3>
+                        <p class="gallery-desc">Espacio colindante con la Universidad de derecho, son los antiguos dominios
+                            de la familia Güell fruto de la obra arquitectónica de Antonio Gaudí.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/jP2jC9s.jpg" alt="Chocolaterías Petritxol">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">CALLE PETRITXOL</h3>
+                        <p class="gallery-desc">Calle típica del barrio gótico de Barcelona donde saborean un exquisito
+                            chocolate.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imgur.com/RulovQp.jpg" alt="Iglesia del Pino">
+                    <div class="gallery-caption">
+                        <h3 class="gallery-title">ESGLÈSIA DEL PI</h3>
+                        <p class="gallery-desc">Iglesia situada en la plaça del Pi con la que se cruzan en su recorrido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trailer Section -->
+    <section id="trailer" class="trailer">
+        <div class="container">
+            <div class="trailer-content">
+                <span class="trailer-badge">TRAILER</span>
+                <h2>BOOKTRAILER OFICIAL</h2>
+                <p>Sumérgete en el mundo de "El Bedel de la Uni" con este avance</p>
+                <div class="trailer-video">
+                    <img src="/api/placeholder/1280/720" alt="Trailer de El Bedel de la Uni" class="video-placeholder">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Section -->
+    <section id="purchase" class="purchase">
+        <div class="container">
+            <div class="purchase-content">
+                <span class="limited-offer">COMPRAR</span>
+                <h2>CONSIGUE TU COPIA HOY</h2>
+                <p>Sumérgete en la Barcelona universitaria de los años ochenta con esta cautivadora historia de amistad,
+                    misterio y descubrimiento. Acompaña a Carla y Dani, el carismático bedel, en su recorrido por las aulas
+                    y el emblemático jardín de las Hespérides mientras desentrañan un intrigante secreto.</p>
+                <div class="price-tag">
+                    <span>3.99€</span>
+                </div>
+                <h3 class="store-title">DISPONIBLE EN:</h3>
+                <div class="store-buttons">
+                    <a href="#" class="store-btn">
+                        <i class="fab fa-amazon store-icon"></i>
+                        <span>Amazon</span>
+                    </a>
+                    <a href="#" class="store-btn">
+                        <i class="fas fa-tablet-alt store-icon"></i>
+                        <span>E-Book</span>
+                    </a>
+                    <a href="#" class="store-btn">
+                        <i class="fas fa-book store-icon"></i>
+                        <span>Casa del Libro</span>
+                    </a>
+                    <a href="#" class="store-btn">
+                        <i class="fas fa-shopping-bag store-icon"></i>
+                        <span>El Corte Inglés</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="newsletter">
+    <div class="container">
+        <div class="newsletter-content">
+            <h3>SÍGUENOS EN REDES SOCIALES</h3>
+            <p>Mantente al día con las últimas novedades, eventos y próximas publicaciones.</p>
+            <div class="author-social newsletter-social">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
