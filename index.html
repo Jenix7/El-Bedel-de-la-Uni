@@ -122,6 +122,24 @@
             gap: 2rem;
         }
 
+        .nav-button-red {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-button-red:hover {
+    background-color: #c02842 !important; /* Un tono más oscuro para hover */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.nav-button-red:before {
+    display: none !important; /* Elimina el subrayado del enlace */
+}
+
         /* Buttons */
         .btn {
             display: inline-block;
@@ -1676,7 +1694,7 @@
                         <li><a href="#author">Autora</a></li>
                         <li><a href="#characters">Personajes</a></li>
                         <li><a href="#gallery">Ubicaciones</a></li>
-                        <li><a href="#purchase">Comprar</a></li>
+                        <li><a href="#purchase" class="nav-button-red">Comprar</a></li>
                     </ul>
                     <button class="mobile-menu-btn">
                         <i class="fas fa-bars"></i>
