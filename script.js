@@ -8,6 +8,9 @@ const socialLinks = {
     pinterest: "https://es.pinterest.com/inma6841"
 };
 
+// Detectar si es un dispositivo móvil
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 document.addEventListener('DOMContentLoaded', function() {
     // Menu móvil
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -85,13 +88,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                // Ajustar offset para móvil vs desktop
+                const headerOffset = window.innerWidth <= 768 ? 60 : 80;
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetElement.offsetTop - headerOffset,
                     behavior: 'smooth'
                 });
             }
         });
     });
+
+    // Mejorar interacción con elementos de galería en dispositivos táctiles
+    if (isMobile) {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('touchstart', function() {
+                // Resetear todos los otros elementos
+                galleryItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active-touch')) {
+                        otherItem.classList.remove('active-touch');
+                    }
+                });
+
+                // Toggle para este elemento
+                this.classList.toggle('active-touch');
+            });
+        });
+    }
 
     // Reproducción de video en trailer
     const playButton = document.querySelector('.play-button');
