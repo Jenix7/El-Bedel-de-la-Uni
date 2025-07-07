@@ -1,11 +1,10 @@
 // Configuración central de redes sociales
 const socialLinks = {
     instagram: "https://www.instagram.com/coronasborri/",
-    youtube: "https://www.youtube.com/@inmacoronas1326",
-    twitter: "https://x.com/CoronasInma",
     facebook: "https://www.facebook.com/inma.coronasborri.5",
+    twitter: "https://x.com/CoronasInma",
     linkedin: "https://www.linkedin.com/in/inma-coronas-40306348/",
-    pinterest: "https://es.pinterest.com/inma6841"
+    youtube: "https://www.youtube.com/@inmacoronas1326"
 };
 
 // Detectar si es un dispositivo móvil
@@ -78,14 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Animación smooth scroll para anclas
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+// Animación smooth scroll para anclas
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
 
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+        // Verificar que es un ancla válida (empieza con # y no es una URL)
+        if (!targetId || targetId === '#' || targetId.length <= 1 || targetId.includes('://')) {
+            return;
+        }
 
+        e.preventDefault();
+
+        try {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Ajustar offset para móvil vs desktop
@@ -95,8 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
             }
-        });
+        } catch (error) {
+            // Si hay un error con el selector, simplemente no hacer nada
+            console.log('Invalid selector:', targetId);
+        }
     });
+});
 
     // Mejorar interacción con elementos de galería en dispositivos táctiles
     if (isMobile) {
@@ -141,36 +149,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Configurar enlaces de redes sociales
-    const instagramIcons = document.querySelectorAll('.social-icon .fa-instagram');
-    const youtubeIcons = document.querySelectorAll('.social-icon .fa-youtube');
-    const twitterIcons = document.querySelectorAll('.social-icon .fa-x-twitter, .social-icon .fa-twitter');
-    const facebookIcons = document.querySelectorAll('.social-icon .fa-facebook-f');
-    const linkedinIcons = document.querySelectorAll('.social-icon .fa-linkedin-in');
+// Configurar enlaces de redes sociales
+document.querySelectorAll('.social-icon').forEach(socialIcon => {
+    const icon = socialIcon.querySelector('i');
+    if (!icon) return;
 
-    // Asignar enlaces a cada tipo de icono
-    instagramIcons.forEach(icon => {
-        icon.closest('a').href = socialLinks.instagram;
-        icon.closest('a').setAttribute('target', '_blank');
-    });
-
-    youtubeIcons.forEach(icon => {
-        icon.closest('a').href = socialLinks.youtube;
-        icon.closest('a').setAttribute('target', '_blank');
-    });
-
-    twitterIcons.forEach(icon => {
-        icon.closest('a').href = socialLinks.twitter;
-        icon.closest('a').setAttribute('target', '_blank');
-    });
-
-    facebookIcons.forEach(icon => {
-        icon.closest('a').href = socialLinks.facebook;
-        icon.closest('a').setAttribute('target', '_blank');
-    });
-
-    linkedinIcons.forEach(icon => {
-        icon.closest('a').href = socialLinks.linkedin;
-        icon.closest('a').setAttribute('target', '_blank');
-    });
+    if (icon.classList.contains('fa-instagram')) {
+        socialIcon.href = socialLinks.instagram;
+        socialIcon.setAttribute('target', '_blank');
+    } else if (icon.classList.contains('fa-youtube')) {
+        socialIcon.href = socialLinks.youtube;
+        socialIcon.setAttribute('target', '_blank');
+    } else if (icon.classList.contains('fa-x-twitter') || icon.classList.contains('fa-twitter')) {
+        socialIcon.href = socialLinks.twitter;
+        socialIcon.setAttribute('target', '_blank');
+    } else if (icon.classList.contains('fa-facebook-f')) {
+        socialIcon.href = socialLinks.facebook;
+        socialIcon.setAttribute('target', '_blank');
+    } else if (icon.classList.contains('fa-linkedin-in')) {
+        socialIcon.href = socialLinks.linkedin;
+        socialIcon.setAttribute('target', '_blank');
+    }
+});
 });

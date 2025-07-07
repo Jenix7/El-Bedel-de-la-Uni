@@ -280,7 +280,7 @@ nav a:hover:before {
     height: 100vh;
     min-height: 700px;
     position: relative;
-    background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.9)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.9));
     color: white;
     display: flex;
     align-items: center;
@@ -295,7 +295,7 @@ nav a:hover:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(15, 22, 38, 0.9) 100%);
     filter: blur(5px) grayscale(60%);
     z-index: -1;
 }
@@ -335,6 +335,12 @@ nav a:hover:before {
     margin-left: 2rem;
 }
 
+.hero-book-cover .book-image-inner {
+    width: auto;
+    display: inline-block;
+}
+
+
 @media (max-width: 992px) {
     .hero-content-wrapper {
         flex-direction: column;
@@ -345,9 +351,9 @@ nav a:hover:before {
         margin-bottom: 3rem;
     }
 
-    .hero-book-cover {
-        margin-left: 0;
-    }
+        .hero-book-cover {
+            margin-left: 0;
+            width: 280px;   }
 }
 
 .hero-badge {
@@ -364,8 +370,21 @@ nav a:hover:before {
     border-radius: 2px;
 }
 
+/* Asegurarse de usar la variante italic 400 de Playfair Display */
 .hero h1 {
-    margin-bottom: 1.5rem;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-style: italic;
+    /* Esto usa la variante 1,700 */
+}
+
+/* Usar la variante regular 700 */
+h2,
+h3 {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-style: normal;
+    /* Esto usa la variante 0,700 */
 }
 
 .hero p {
@@ -391,10 +410,11 @@ nav a:hover:before {
 
 .store-title {
     margin: 2rem 0 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
     color: var(--text-color);
+    opacity: 0.8;
 }
 
 .floating-element {
@@ -453,7 +473,7 @@ nav a:hover:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(45deg, rgba(171, 27, 51, 0.1) 0%, rgba(201, 157, 102, 0.1) 100%);
     opacity: 0.05;
     mix-blend-mode: overlay;
     filter: grayscale(100%);
@@ -471,6 +491,15 @@ nav a:hover:before {
 .book-image {
     position: relative;
     perspective: 1000px;
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.book-preview .book-image-inner {
+    width: auto;
+    display: inline-block;
 }
 
 /* Keep the original styles for the hero section */
@@ -512,6 +541,7 @@ nav a:hover:before {
     width: 100%;
     box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(255, 46, 99, 0.3);
     border-radius: 5px;
+    display: block;
 }
 
 .newsletter-social {
@@ -528,6 +558,7 @@ nav a:hover:before {
     background: linear-gradient(135deg, rgba(255, 46, 99, 0.2) 0%, rgba(8, 217, 214, 0.2) 100%);
     mix-blend-mode: overlay;
     pointer-events: none;
+    border-radius: 5px;
 }
 
 .book-shadow {
@@ -535,12 +566,12 @@ nav a:hover:before {
     width: 90%;
     height: 20px;
     bottom: -30px;
-    left: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.3);
     filter: blur(15px);
     border-radius: 50%;
 }
-
 .book-info {
     position: relative;
 }
@@ -637,7 +668,7 @@ nav a:hover:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(42, 50, 74, 0.3) 0%, rgba(15, 22, 38, 0.5) 100%);
     opacity: 0.05;
     mix-blend-mode: overlay;
 }
@@ -847,7 +878,7 @@ nav a:hover:before {
     height: 100%;
     top: 0;
     left: 0;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(171, 27, 51, 0.2) 0%, rgba(26, 26, 46, 0.3) 100%);
     opacity: 0.05;
     filter: blur(5px);
 }
@@ -966,7 +997,7 @@ nav a:hover:before {
     height: 100%;
     top: 0;
     left: 0;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(201, 157, 102, 0.2) 0%, rgba(15, 22, 38, 0.4) 100%);
     opacity: 0.2;
     filter: blur(10px);
 }
@@ -1087,6 +1118,74 @@ nav a:hover:before {
     margin-right: 1rem;
 }
 
+.main-purchase-cta {
+    margin: 2.5rem 0;
+    text-align: center;
+}
+
+.btn-large {
+    padding: 1.3rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(171, 27, 51, 0.3);
+}
+
+.btn-large i {
+    margin-right: 0.8rem;
+}
+
+.btn-large:hover {
+    box-shadow: 0 8px 25px rgba(171, 27, 51, 0.4);
+}
+/* Estilos para tiendas secundarias */
+.secondary-stores {
+    margin-top: 2rem;
+}
+
+.store-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    margin: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.store-link:hover {
+    opacity: 1;
+    color: var(--highlight-color);
+    border-color: var(--highlight-color);
+    background-color: rgba(201, 157, 102, 0.1);
+    transform: translateY(-2px);
+}
+
+.store-link i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.store-link span {
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .secondary-stores {
+        flex-wrap: wrap;
+    }
+
+    .store-link {
+        margin: 0.25rem;
+        font-size: 0.85rem;
+    }
+}
+
 .store-buttons {
     display: flex;
     justify-content: center;
@@ -1148,7 +1247,7 @@ nav a:hover:before {
     height: 100%;
     top: 0;
     left: 0;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(45deg, rgba(171, 27, 51, 0.2) 0%, rgba(42, 50, 74, 0.3) 100%);
     opacity: 0.05;
     filter: blur(5px);
 }
@@ -1319,7 +1418,7 @@ footer:before {
     height: 100%;
     top: 0;
     left: 0;
-    background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.3) 0%, rgba(10, 14, 20, 0.5) 100%);
     opacity: 0.05;
     mix-blend-mode: overlay;
 }
@@ -1559,9 +1658,8 @@ footer:before {
         font-size: 1.2rem;
     }
 
-    .hero-book-cover {
-        width: 280px;
-    }
+        .hero-book-cover {
+            width: 280px;   }
 
     .cta-buttons {
         flex-direction: column;
@@ -1760,9 +1858,7 @@ footer:before {
 /* Ajustes específicos para móviles pequeños */
 @media (max-width: 480px) {
     .hero-book-cover {
-        width: 220px;
-    }
-
+            width: 220px;   }
     .price-tag {
         font-size: 2.5rem;
     }
