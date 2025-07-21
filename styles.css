@@ -864,62 +864,83 @@ h3 {
     border-bottom: 1px solid var(--highlight-color);
 }
 
-/* Plot Twists Section */
-.plot-twists {
+/* Reviews Section */
+.reviews {
     background-color: var(--dark-color);
     position: relative;
     overflow: hidden;
 }
 
-.plot-twists:before {
+.reviews:before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(135deg, rgba(171, 27, 51, 0.2) 0%, rgba(26, 26, 46, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(171, 27, 51, 0.1) 0%, rgba(26, 26, 46, 0.2) 100%);
     opacity: 0.05;
     filter: blur(5px);
 }
 
-.plot-twist-slider {
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     margin-top: 3rem;
     position: relative;
     z-index: 2;
 }
 
-.twist-card {
+.review-card {
     background-color: var(--accent-color);
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 10px;
-    margin: 2rem 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border-left: 5px solid var(--secondary-color);
+    border-top: 3px solid var(--secondary-color);
     position: relative;
+    transition: all 0.3s ease;
 }
 
-.twist-card:before {
-    content: '"';
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.1);
-    font-family: Georgia, serif;
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-.twist-text {
-    font-size: 1.5rem;
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
     font-style: italic;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    position: relative;
+    color: var(--text-color);
 }
 
-.twist-chapter {
-    font-weight: 700;
-    color: var(--secondary-color);
+.review-text .highlight {
+    color: var(--highlight-color);
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+@media (max-width: 992px) {
+    .reviews-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .review-card {
+        padding: 2rem;
+    }
+
+    .review-text {
+        font-size: 1rem;
+    }
 }
 
 /* Gallery Section */
